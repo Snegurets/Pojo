@@ -12,8 +12,6 @@ public class CaseModelConstructor {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         System.out.println(gson.toJson(caseModelConstructor.getCaseModel()));
 
-
-
     }
     public CaseResults getCaseModel(){
         RunsResults runsResults = new RunsResults();
@@ -33,7 +31,6 @@ public class CaseModelConstructor {
         CaseResults caseResults = new CaseResults();
         caseResults.setEntriesList(entriesList);
         return caseResults;
-
 
     }
 }

@@ -1,0 +1,16 @@
+<suite name="Suite2">
+    <test name="Regression1" preserve-order="false">
+        <classes>
+
+            <class name="org.Lesson16.FirstTest">
+                <methods>
+                    <include name="firstTest" />
+                </methods>
+            </class>
+
+            <class name="org.Lesson16.SecondTest" />
+
+        </classes>
+    </test>
+
+</suite>

@@ -1,18 +1,38 @@
 package org.Lesson21.pages;
 
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage{
-    private By emailField = By.xpath("");
-    private By passwordField = By.xpath("");
+
+    private By emailField = By.xpath("//input[@id = 'name']");
+    private By passwordField = By.xpath("//input[@id = 'password']");
+    private By loginButton = By.xpath("//button[@id = 'button_primary']");
 
 
-    public void inputEmail(WebDriver webDriver, String email){
-        findElement(webDriver, emailField).sendKeys("");
+    public LoginPage(WebDriver webDriver, String url) {
+        super(webDriver,url);
     }
 
-    public void inputPassword(WebDriver webDriver, String password){
+    public LoginPage inputEmail(String email){
+        findElement(webDriver, emailField).sendKeys(email);
+        return this;
+    }
 
+    public LoginPage inputPassword(String password){
+        findElement(webDriver, passwordField).sendKeys(password);
+        return this;
+    }
+
+    public LoginPage clickOnLoginButton(){
+        findElement(webDriver, loginButton).click();
+        return this;
+    }
+
+    public LoginPage verifyPasswordFieldIsEmpty(){
+        boolean isPasswordFieldEmpty = findElement(webDriver, passwordField).getAttribute("value").isEmpty();
+        Assertions.assertThat(isPasswordFieldEmpty).as("Password field should be an empty").isTrue();
+        return this;
     }
 }

@@ -7,6 +7,7 @@ public class Main {
                 .setName("Polina")
                 .setStatus(25L)
                 .build();
+
         System.out.println(builderExample.getName() + builderExample.getStatus());
 
         BuilderExample builderExample1 =
@@ -16,6 +17,7 @@ public class Main {
                         .setAge(20).
                         setStatus(20L)
                         .build();
+
         System.out.println(builderExample1.getName() + builderExample1.getAge() + builderExample1.getStatus());
 
         BuilderExample builderExample2 = BuilderExample
